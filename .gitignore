@@ -109,4 +109,6 @@ venv.bak/
 .idea
 
 # docker volumes
+postgres-data/**
+postgres-data/*
 postgres-data

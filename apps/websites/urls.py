@@ -9,7 +9,7 @@ router = DefaultRouter()
 router.register(r'', WebsiteViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
     path('load-excel/', LoadWebsiteExcelView.as_view()),
     path('load-websites/', LoadWebsiteToDBView.as_view()),
+    path('', include(router.urls)),
 ]

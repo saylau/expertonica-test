@@ -11,4 +11,5 @@ class WebsiteSerializer(serializers.ModelSerializer):
 
 
 class UrlSerializer(serializers.Serializer):
+    """Url serializer"""
     url = serializers.URLField(required=False, allow_null=True)

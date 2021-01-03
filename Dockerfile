@@ -21,7 +21,4 @@ COPY . /app
 # Collect static
 RUN python manage.py collectstatic --noinput
 
-# Compile translations
-RUN python manage.py compilemessages
-
 CMD ["/docker-entrypoint.sh"]

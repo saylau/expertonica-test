@@ -5,5 +5,5 @@ from .views import SiteCheckView
 
 
 urlpatterns = [
-    path('site-check/<str:url>', SiteCheckView.as_view())
+    path('site-check/<str:url>/', SiteCheckView.as_view())
 ]

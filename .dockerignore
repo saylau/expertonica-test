@@ -1,3 +1,6 @@
 .*
 !.coveragerc
 !.env
+.venv
+venv
+static
