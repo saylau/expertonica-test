@@ -5,6 +5,9 @@ from .models import LiveProbe
 
 @admin.register(LiveProbe)
 class LiveProbeAdmin(admin.ModelAdmin):
+    """
+    Live Probe model admin
+    """
     list_display = (
                     'http_status_code',
                     'response_time',

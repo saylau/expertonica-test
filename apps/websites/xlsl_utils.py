@@ -5,6 +5,9 @@ from django.core.exceptions import ValidationError
 
 
 def parse_website_list_xlsx(file_path):
+    """
+    Parse website url list from excel
+    """
     rb = xlrd.open_workbook(filename=file_path)
     sheet = rb.sheet_by_index(0)
 

@@ -12,6 +12,9 @@ session = requests.Session()
 
 @celery_app.task()
 def take_live_probes():
+    """
+    Launch Live Probe tasks for all websites in database
+    """
     websites = Website.objects.all()
     for website in websites:
         try: 
@@ -22,6 +25,9 @@ def take_live_probes():
 
 @celery_app.task()
 def take_live_probe(url, id):
+    """
+    Take Live Probe for website
+    """
     live_probe = {
         "website": id
     }

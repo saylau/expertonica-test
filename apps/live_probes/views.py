@@ -8,9 +8,13 @@ from apps.websites.models import Website
 
 from .tasks import take_live_probe
 
+
 url_param = openapi.Parameter('url', openapi.IN_QUERY, description="url param", type=openapi.TYPE_STRING)
 @swagger_auto_schema(manual_parameters=[url_param])
 class SiteCheckView(views.APIView):
+    """
+    Check Site and save live probe
+    """
     permission_classes = (AllowAny,)
 
     def post(self, request, url, *args, **kwargs):
