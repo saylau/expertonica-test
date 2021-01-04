@@ -74,3 +74,28 @@ services:
       - postgres
       - redis
       - rabbitmq
+  
+  celerybeat:
+    restart: always
+    environment:
+      - CONTAINER_TYPE=CELERY_BEAT
+      - DJANGO_SECRET_KEY=local
+      - DB_HOST=postgres
+      - DB_USER=expertonica
+      - DB_NAME=expertonica
+      - RABBIT_PROTOCOL=pyamqp
+      - RABBIT_HOST=rabbitmq
+      - RABBIT_USER=guest
+      - RABBIT_PASSWORD=guest
+      - RABBIT_PORT=5672
+      - CELERY_REDIS_HOST=redis
+      - CELERY_REDIS_PORT=6379
+    build: ./
+    command: >
+      bash -c "./docker-entrypoint.sh"
+    volumes:
+      - ./:/app
+    depends_on:
+      - postgres
+      - redis
+      - rabbitmq

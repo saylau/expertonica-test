@@ -2,7 +2,6 @@ import os
 import requests
 
 from config import celery_app
-
 from apps.websites.models import Website
 
 from .serializers import LiveProbeSerializer
