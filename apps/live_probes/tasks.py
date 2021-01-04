@@ -41,8 +41,6 @@ def take_live_probe(url, id):
         
         http_status_code = response.status_code
         live_probe['http_status_code'] = http_status_code
-        if http_status_code >=400:
-            live_probe['response'] = response.content
         
     except requests.Timeout as exc:
         print(exc)
